@@ -1,0 +1,28 @@
+Introduction to git using Ubuntu 17.04
+
+Installation
+The git version control system is installed with the following command
+
+sudo apt install git
+Configuration
+Every git user should first introduce himself to git, by running these two commands:
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+Basic usage
+The above is already sufficient to use git in a distributed and secure way, provided users have access to the machine assuming the server role via SSH. On the server machine, creating a new repository can be done with:
+
+git init --bare /path/to/repository
+This creates a bare repository, that cannot be used to edit files directly. If you would rather have a working copy of the contents of the repository on the server, ommit the --bare option.
+
+Any client with SSH access to the machine can then clone the repository with:
+
+git clone username@hostname:/path/to/repository
+Once cloned to the client's machine, the client can edit files, then commit and share them with:
+
+cd /path/to/repository
+#(edit some files
+git commit -a # Commit all changes to the local version of the repository
+git push origin master # Push changes to the server's version of the repository
+
+
