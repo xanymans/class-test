@@ -25,4 +25,6 @@ cd /path/to/repository
 git commit -a # Commit all changes to the local version of the repository
 git push origin master # Push changes to the server's version of the repository
 
+This is from linux ssh
+
 
